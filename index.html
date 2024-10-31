@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Deskripsi situs web Anda">
+    <meta name="keywords" content="Novel BTTH, Manhua BTTH, Komik btth, Nonton btth, battle through the heavens">
+    <meta name="author" content="Aikacungwen Manhua">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Aikacungwen Manhua">
+    <meta property="og:description" content="Baca Komik BTTH bahasa Indonesia, Baca Manhua BTTH Bahasa Indonesia">
+    <meta property="og:image" content="/favicon.jpg">
+    <meta property="og:url" content="/index.html">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aikacungwen Manhua">
+    <meta name="twitter:description" content="Baca Komik BTTH bahasa Indonesia, Baca Manhua BTTH Bahasa Indonesia">
+    <meta name="twitter:image" content="/favicon.jpg">
+    <title>Aikacungwen Manhua</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #333;
+            color: #fff;
+            padding-bottom: 60px; /* Sesuaikan dengan tinggi footer */
+        }
+
+        header {
+            grid-column: span 2;
+            text-align: center;
+            border-bottom: 2px solid #000;
+            background-color: #000;
+            padding: 10px;
+        }
+
+        header img {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            width: 100px;
+        }
+
+        nav {
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 3; /* Tambahkan nilai z-index di sini */
+}
+
+
+        nav a {
+            margin: 0 10px;
+            color: silver;
+            text-decoration: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #555;
+            border: 2px solid #555;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        th {
+            background-color: #444;
+        }
+
+       .cover-container {
+            position: relative;
+            text-align: center;
+            width: 180px;
+            height: 290px;
+            margin-bottom: 20px; /* Atur jarak ke elemen berikutnya */
+            z-index: 1;
+        }
+
+        .cover-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .cover-container:hover img {
+            transform: scale(1.1);
+        }
+
+       .read-now {
+            display: inline-block;
+            font-size: 12px; 
+            line-height: 1;
+            position: absolute;
+            z-index: 1;
+            bottom: 10px; /* Sesuaikan nilai bottom sesuai dengan kebutuhan Anda */
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 5px;
+            border-radius: 10px;
+            color: black; /* Text color for better visibility */
+            width: calc(100% - 20px); /* Menggunakan calc() untuk menghitung lebar sesuai kebutuhan */
+            max-width: 180px; /* Menyamakan dengan lebar cover-container */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0; /* Ubah dari left: 50% menjadi left: 0 */
+            width: 100%;
+            text-align: center;
+            background-color: #444;
+            padding: 10px;
+            clear: both;
+            z-index: 2;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            color: silver;
+        }
+
+        .footer-link {
+            color: red;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            color: red;
+        }
+
+        .dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 3; /* Tambahkan nilai z-index di sini */
+}
+
+
+        .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-align: center;
+    transform: translateX(0%); /* Ubah nilai transform di sini */
+}
+
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Style untuk mode desktop */
+        @media (min-width: 768px) {
+            .cover-container {
+                width: 180px;
+                height: 290px;
+            }
+
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+        }
+
+
+        /* Tambahkan ini pada bagian CSS Anda */
+        @media (max-width: 768px) {
+            body {
+                display: block; /* Ganti grid menjadi blok pada mode ponsel */
+            }
+
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* Ganti jumlah kolom menjadi 2 pada mode ponsel */
+                gap: 30px;
+            }
+
+            .cover-container {
+                width: 100%; /* Gunakan lebar 100% pada mode ponsel */
+                margin-bottom: 20px; /* Atur ruang antar cover-container pada mode ponsel */
+            }
+        }
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px); /* Menempatkan dropdown di bawah tombol */
+    left: 50%; /* Pusat horizontal */
+    transform: translateX(-50%); /* Pusat horizontal */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+@media (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Ganti jumlah kolom menjadi 2 pada mode ponsel */
+        gap: 10px; /* Mengurangi jarak antara grid container pada mode ponsel */
+        margin-bottom: 20px; /* Atur ruang bawah pada mode ponsel */
+    }
+
+    .cover-container {
+        width: 100%; /* Gunakan lebar 100% pada mode ponsel */
+        margin-bottom: 10px; /* Atur ruang antar cover-container pada mode ponsel */
+    }
+}
+
+
+    </style>
+    <script type='text/javascript' src='//capturescaldsomewhat.com/f6/06/4d/f6064d13465eb067aedc319235a586f0.js'></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N198D4VMTL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-N198D4VMTL');
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="https://blogger.googleusercontent.com/img/a/AVvXsEhfPFxQVx-IKQ9cRbUjAlD4-R3iH_4icxQvlC3lIlpYojWDSHWHwkZd5NoXaNhoFrJJuWQii7e9SU0VLHW6OfsNbwDqe55LDMC2JgSVz746FjrzoLAjx3I2YKIngw6PgaTSxvQgu9hcTvBw_KCfFx8SK2wv-X9QmFcCkrbKtODgAWC2UV6jImlB5uxySAw=w800" alt="Logo Website"></a>
+        <nav>
+    <table>
+        <tr>
+            <th class="dropdown">
+                <span>Menu</span>
+                <div class="dropdown-content">
+                    <a href="https://t.me/aikacungwen">Join Telegram</a>
+                    <a href="https://saweria.co/aikacungwen">Donasi</a>
+                    <a href="https://play.1ac.site/">Nonton Donghua</a>
+                    <a href="/sitemap.html">Sitemap</a>
+                </div>
+            </th>
+        </tr>
+    </table>
+</nav>
+
+
+    </header>
+
+    <!-- Container untuk grid desktop -->
+    <div class="grid-container">
+
+
+        <div class="cover-container">
+            <a href="post.html">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEIcR_ilwg-jq3AujbufvALhuSqg0iAAATA1jo6-p8LSJ2V4S44FEnJtUWe8a7MNmtK_xtIK2TCS5q1kKvO4rKGXMkGI8NXt6xm5ydDgFWdSOzUyUJ2il2FkH0uishvyDovNcgGJVJOmxnR0NoNraUDdso1xVpsQLYxS42aQP-i_jhv3J651cSDOfwmjY/s1047/IMG_20231012_064551_933.jpg" alt="Cover Komik">
+                <div class="read-now">
+                    Manhua BTTH
+                </div> 
+                </a>
+        </div>
+
+        <div class="cover-container">
+            <a href="https://www.aikacungwen.online/2023/12/soul-land-movie-battle-of-two-god.html">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAZqzBy5GScVabFXSPwrGNf1Hej37tSMURSf78KWsNpByJEiWd8HirvJ75DHF0CZSwa0bcWPMh2cXD5RTAPORdV-A5NO3Bue-apkYAKH7x6VUzKkgZhK8uwxl4LIPprZIXeOa1S7FmVWnmK8g9ao14iFI_-IymYaHgRmg1pnmRjgrxvm2XMTOZMfb-i10k/s656/images%20-%202023-12-02T122321.498.jpeg" alt="Cover Komik">
+                <div class="read-now">
+                    Soul Land Movie 120 menit
+                </div>
+            </a>
+        </div>
+        <div class="cover-container">
+            <a href="wdqk/episode1.html">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8yyDblKUCfMe4b0mDg4p_fgEcl0UkPyETee7fN9qazDjKCDFq_HJriT5RBbEf1XTWWOyy7fdzbin5nzAVr6FNpucVfZf2BAxzeMR4RXqDEhF2E4GTs3Bcod6qv_jiGvot16VcKBHH4j_YrFlmYZVY0CNtm7dVuGmcjCe9VnuL2RZOKDMRLVAHMFS4RKnu/w600/006T5GTEgy1hgoqjzoo40j32o04qo7wk%20%282%29.jpg" alt="Cover Komik">
+                <div class="read-now">
+                    Wu Dong Qian Kun Season 4
+                </div>
+            </a>
+        </div>
+
+        
+            
+        
+        <!-- Tambahkan cover-container lainnya sesuai kebutuhan -->
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Aikacungwen Manhua.</p>
+        <p>Theme By: <a href="https://play.1ac.site/" style="color: #fff;">@Aikacungwen</a>.</p>
+    </footer>
+    
+</body>
+</html>
+
